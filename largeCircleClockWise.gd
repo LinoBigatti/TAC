@@ -13,7 +13,6 @@ func run_script() -> int:
 	# Initialize variables
 	var amp = 300
 	var dir = 1 	# 1 for c, -1 for cc
-	var freq = 5 * dir
 	var sustainCompensation = 0
 
 	# Get selected timing points
@@ -29,11 +28,11 @@ func run_script() -> int:
 		
 		# Fancy math
 		var t = point.time - sustainCompensation
-		var z = t / (PI * 2)
-		var x = amp * cos(freq * z)
-		var y = amp * sin(freq * z)
-		var pos = Vector2(x + 960, y + 540)
-		
+		var z = t * TAU
+		var x = amp * cos(z * dir / 2200)
+		var y = amp * sin(z * dir / 2200)
+ 		var pos = Vector2(x + 960, y + 540)
+
 		# Compensate for sustain notes
 		if point is HBSustainNote:
 			sustainCompensation += point.end_time - point.time

@@ -29,16 +29,24 @@ func run_script() -> int:
 		# Fancy math
 		var t = point.time - sustainCompensation
 		var z = t * TAU
-		var x = amp * cos(z * dir / 2200)
-		var y = amp * sin(z * dir / 2200)
-		var pos = Vector2(x + 960, y + 540)
+		var x = amp * cos(z * dir / 2200) + 960
+		var y = amp * sin(z * dir / 2200) + 540
+		var pos = Vector2(x, y)
 		
 		# Compensate for sustain notes
 		if point is HBSustainNote:
 			sustainCompensation += point.end_time - point.time
 		
-		# Change position
+		# Set position
 		set_timing_point_property(point, "position", pos)
+
+		# Calculate angle to the center of the screen
+		var a = atan2(y - 540, x - 960) 
+		a *= (180 / PI) 
+		a += 180
+
+		# Set angle
+		set_timing_point_property(point, "entry_angle", a)
 	
 	# Return OK to apply the script's changes, return anything else (such as -1)
 	# to cancel it

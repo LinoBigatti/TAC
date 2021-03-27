@@ -3,15 +3,18 @@
 # for EIRTeam to incorporate it in the game
 
 # 
-# Small C circle script
-# By Lino
+# circle 0 script
+# By Lino & NeoRash
+# Made with Love
 #
 
 extends ScriptRunnerScript # Do not remove this
 
 func run_script() -> int:
 	# Initialize variables
-	var amp = 125
+	var size = 1.5 # Circle Size
+	var amp = 96 * size # Amplitude = regular Spacing * Circle Size
+	var frq = 180000 * size
 	var dir = 1 	# 1 for c, -1 for cc
 	var sustainCompensation = 0
 
@@ -26,11 +29,15 @@ func run_script() -> int:
 		# Get point
 		var point := selected_timing_points[i] as HBTimingPoint
 		
+		# Get bpm
+		var bpm := get_bpm_at_time(point.time)
+		print("bpm: " + bpm)
+			
 		# Fancy math
 		var t = point.time - sustainCompensation
 		var z = t * TAU
-		var x = amp * cos(z * dir / 2200) + 960
-		var y = amp * sin(z * dir / 2200) + 540
+		var x = amp * cos(z * dir * bpm / frq) + 960
+		var y = amp * sin(z * dir * bpm / frq) + 540
 		var pos = Vector2(x, y)
 		
 		# Compensate for sustain notes
@@ -47,7 +54,6 @@ func run_script() -> int:
 
 		# Set angle
 		set_timing_point_property(point, "entry_angle", a)
-
 	
 	# Return OK to apply the script's changes, return anything else (such as -1)
 	# to cancel it

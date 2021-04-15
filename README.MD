@@ -7,3 +7,4 @@ The TAC repo consists of a series of unofficial scripts for the Project Heartbea
 - Alternating pattern generators
 - Sine collection
 - Opposite note converter
+- Angle flipper

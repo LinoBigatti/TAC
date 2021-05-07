@@ -20,7 +20,7 @@ func run_script() -> int:
 		var point := selected_timing_points[i] as HBTimingPoint
 		
 		# Set the angle
-		set_timing_point_property(point, "entry_angle", point.entry_angle + 180)
+		set_timing_point_property(point, "entry_angle", point.entry_angle - 180)
 	
 	# Return OK to apply the script's changes, return anything else (such as -1)
 	# to cancel it

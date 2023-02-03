@@ -9,15 +9,16 @@
 # By Lino
 #
 
+#meta:name:Switch Note Types
+#meta:description:Converts every note to its opposite note type (Triangle -> Cross, Square -> Circle, etc.).
+#meta:usage:Select all your notes, and press "Run"
+#meta:preview:false
+
 extends ScriptRunnerScript # Do not remove this
 
 func run_script() -> int:
 	# Get selected timing points
 	var selected_timing_points := get_selected_timing_points()
-	
-	# Invert them pokeWhat
-	selected_timing_points.invert()
-
 	
 	# Iterate over them
 	for i in range(selected_timing_points.size()):

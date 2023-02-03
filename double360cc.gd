@@ -9,15 +9,17 @@
 # By Lino
 #
 
+#meta:name:Create Counterclockwise Double 360 Pattern
+#meta:description:Creates a counterclockwise double 360 pattern (TT -> SS -> XX -> CC), starting at the first note type.
+#meta:usage:Set the first note type to the start of the pattern, select all your notes, and press "Run".
+#meta:preview:false
+
 extends ScriptRunnerScript # Do not remove this
 
 func run_script() -> int:
 	# Get selected timing points
 	var selected_timing_points := get_selected_timing_points()
 	
-	# Invert them pokeWhat
-	selected_timing_points.invert()
-
 	# Get the note type of the first point
 	var firstPoint := selected_timing_points[0] as HBTimingPoint
 	var noteType = firstPoint.note_type

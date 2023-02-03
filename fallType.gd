@@ -2,12 +2,15 @@
 # AGPLv3 for the general public and also gives an exclusive, royalty-free license
 # for EIRTeam to incorporate it in the game
 
-
 # 
 # The power of the dark side in one script
 # By Lino
 #
 
+#meta:name:Arrange Notes like Fall Type games
+#meta:description:Arranges the notes in 4 vertical columns, with the angles coming from the top. Hearts and slides are unaffected.
+#meta:usage:Select all your notes, and press "Run".
+#meta:preview:true
 
 extends ScriptRunnerScript # Do not remove this
 

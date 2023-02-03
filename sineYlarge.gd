@@ -11,6 +11,11 @@
 # Vector2(note.position.x + 40 * sin(1.5 * note.position.y/100), note.position.y)
 # 
 
+#meta:name:Arrange as Large Vertical Sine Wave
+#meta:description:Arranges notes following a sine wave, in the Y axis.
+#meta:usage:Select all your notes, arrange them vertically, and press "Run"
+#meta:preview:true
+
 extends ScriptRunnerScript # Do not remove this
 
 func run_script() -> int:

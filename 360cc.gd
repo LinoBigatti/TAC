@@ -1,6 +1,5 @@
-# Any script that interacts with the Project Heartbeat API is licensed under the
-# AGPLv3 for the general public and also gives an exclusive, royalty-free license
-# for EIRTeam to incorporate it in the game
+# Any script that interacts with the Project Heartbeat API is licensed under the AGPLv3
+# For more information, please read LICENSE.MD
 
 # Documentation for the scripting system can be found here: https://steamcommunity.com/sharedfiles/filedetails/?id=2398390074
 
@@ -9,15 +8,17 @@
 # By Lino
 #
 
+#meta:name:Create Counterclockwise 360 Pattern
+#meta:description:Creates a counterclockwise 360 pattern (Triangle -> Square -> Cross -> Circle), starting at the first note type.
+#meta:usage:Set the first note type to the start of the pattern, select all your notes, and press "Run".
+#meta:preview:false
+
 extends ScriptRunnerScript # Do not remove this
 
 func run_script() -> int:
 	# Get selected timing points
 	var selected_timing_points := get_selected_timing_points()
 	
-	# Invert them pokeWhat
-	selected_timing_points.invert()
-
 	# Get the note type of the first point
 	var firstPoint := selected_timing_points[0] as HBTimingPoint
 	var noteType = firstPoint.note_type

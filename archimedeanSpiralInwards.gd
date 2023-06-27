@@ -36,8 +36,6 @@ func run_script() -> int:
 	selected_timing_points.invert()
 	var size = selected_timing_points.size()
 	
-	var eight_map := get_normalized_timing_map()
-	
 	for i in range(size):
 		var point := selected_timing_points[i] as HBTimingPoint
 		
@@ -52,7 +50,7 @@ func run_script() -> int:
 			if point is HBSustainNote:
 				time = point.end_time
 			
-			var eight_diff = linear_bound(eight_map, next_time) - linear_bound(eight_map, time)
+			var eight_diff = get_time_as_eight(next_time) - get_time_as_eight(time)
 			
 			dist = eight_diff * -DISTANCE
 			phi += dist / r

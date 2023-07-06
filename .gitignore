@@ -11,6 +11,8 @@
 !alternating.gd
 !angleFlip.gd
 !snapTime.gd
+!miraiLink.gd
+!miraiLinkSimple.gd
 !LICENSE.MD
 !README.MD
 !.gitignore

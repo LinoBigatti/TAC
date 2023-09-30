@@ -9,7 +9,7 @@
 #
 
 #meta:name:Mirai Link (Simple)
-#meta:description:Connects the Flying Icon of the first Note with the last Note. All Flying Icons in between disappear. The first Flying Icon is left untouched.
+#meta:description:Connects the Flying Icon of the first Note with the last Note. All Icons in between disappear. The first Icon is left untouched.
 #meta:usage:Select your arranged notes and press "Run".
 #meta:preview:true
 
@@ -40,6 +40,7 @@ func run_script() -> int:
 	#set_timing_point_property(first_note, "auto_time_out", false);
 	#set_timing_point_property(first_note, "time_out", last_note.time - first_note.time);
 	#set_timing_point_property(first_note, "oscillation_amplitude", 0);
+	#set_timing_point_property(first_note, "oscillation_frequency", -2);
 	#set_timing_point_property(first_note, "entry_angle", (Vector2(0,0).angle_to_point(connection_vector(first_note.position,last_note.position)) / TAU * 360));
 
 	# Notes in between
@@ -54,6 +55,7 @@ func run_script() -> int:
 	set_timing_point_property(last_note, "auto_time_out", false);
 	set_timing_point_property(last_note, "time_out", last_note.time - first_note.time);
 	set_timing_point_property(last_note, "oscillation_amplitude", 0);
+	#set_timing_point_property(last_note, "oscillation_frequency", 2);
 	set_timing_point_property(last_note, "entry_angle", (Vector2(0,0).angle_to_point(connection_vector(first_note.position,last_note.position)) / TAU * 360));
 
 	return OK;

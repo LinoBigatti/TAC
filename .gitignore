@@ -13,6 +13,12 @@
 !snapTime.gd
 !miraiLink.gd
 !miraiLinkSimple.gd
+!horizontalSineWave.gd
+!horizontalSineWaveSmall.gd
+!horizontalSineWaveAbs.gd
+!horizontalSineWaveAbsSmall.gd
+!horizontalSineWaveChainsaw.gd
+!horizontalSineWaveChainsawSmall.gd
 !LICENSE.MD
 !README.MD
 !.gitignore

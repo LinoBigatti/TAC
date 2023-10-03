@@ -20,7 +20,7 @@
 #
 
 #meta:name:Horizontal Sine Wave (Small)
-#meta:description:Arranges notes following a horizontal sine wave.
+#meta:description:Arranges notes following a horizontal Sine Wave.
 #meta:usage:Select your horizontally arranged notes and press "Run".
 #meta:preview:true
 

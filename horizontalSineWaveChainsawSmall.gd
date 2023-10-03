@@ -20,7 +20,7 @@
 #
 
 #meta:name:Horizontal Triangle Wave (Small)
-#meta:description:Arranges notes following a horizontal Triangle or Chainsaw Wave.
+#meta:description:Arranges notes following a horizontal Triangle (Or Chainsaw) Wave.
 #meta:usage:Select your horizontally arranged notes and press "Run".
 #meta:preview:true
 

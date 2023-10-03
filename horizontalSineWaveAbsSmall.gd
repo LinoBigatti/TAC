@@ -20,7 +20,7 @@
 #
 
 #meta:name:Horizontal Absolute Sine Wave (Small)
-#meta:description:Arranges notes following an absolute horizontal sine wave.
+#meta:description:Arranges notes following an Absolute horizontal Sine Wave.
 #meta:usage:Select your horizontally arranged notes and press "Run".
 #meta:preview:true
 

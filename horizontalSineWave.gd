@@ -19,8 +19,8 @@
 # Also you can now place the Wave anywhere on the Screen, you'll get the same Result.
 #
 
-#meta:name:Horizontal Sine Wave
-#meta:description:Arranges notes following a horizontal sine wave.
+#meta:name:Horizontal Sine Wave (Big)
+#meta:description:Arranges notes following a horizontal Sine Wave.
 #meta:usage:Select your horizontally arranged notes and press "Run".
 #meta:preview:true
 
@@ -29,7 +29,7 @@ extends ScriptRunnerScript # Do not remove this
 
 # Variables (changeable)
 var grid_size = 96 # Arranger Separation, for Example: 8th = 96px, 12th = 128px
-var amp = 24 # influences y, 24px is quarter y Spacing.
+var amp = 72 # influences y, 24px is quarter y Spacing.
 var freq = 0.66 # influences x, stretches or compresses the Sine.
 
 

@@ -33,7 +33,7 @@ func run_script() -> int:
 	var phi = r / b
 	
 	var selected_timing_points := get_selected_timing_points()
-	selected_timing_points.invert()
+	selected_timing_points.reverse()
 	var size = selected_timing_points.size()
 	
 	for i in range(size):

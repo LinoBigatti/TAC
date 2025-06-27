@@ -30,8 +30,11 @@ func run_script() -> int:
 	# Get selected timing points
 	var selected_timing_points := get_selected_timing_points()
 	
+	# Comfy only accepts pastes from its own build version. This string has to be changed for different builds of Comfy
+	var commit_hash = "bfb491cc" 
+	
 	# Magic string
-	var clipboard_text = "#Comfy::Studio::ChartEditor Clipboard bfb491cc"
+	var clipboard_text = "#Comfy::Studio::ChartEditor Clipboard " + commit_hash
 	var data = []
 	
 	# Iterate over them
@@ -62,7 +65,7 @@ func run_script() -> int:
 		clipboard_text += "Target { %d %d %d %d %d %d %.2f %.2f %.2f %.2f %.2f %.2f };" % entry
 	
 	# Copy to clipboard
-	OS.set_clipboard(clipboard_text)
+	DisplayServer.clipboard_set(clipboard_text)
 	
 	# Return OK to apply the script's changes, return anything else (such as -1)
 	# to cancel it

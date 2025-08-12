@@ -10,9 +10,12 @@
 !double360cc.gd
 !alternating.gd
 !angleFlip.gd
+!opposite.gd
 !snapTime.gd
 !miraiLink.gd
 !miraiLinkSimple.gd
+!archimedeanSpiralInwards.gd
+!archimedeanSpiralOutwards.gd
 !horizontalSineWave.gd
 !horizontalSineWaveSmall.gd
 !horizontalSineWaveAbs.gd

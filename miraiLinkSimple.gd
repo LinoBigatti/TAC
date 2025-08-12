@@ -5,12 +5,13 @@
 # by NeoRash & SimLate
 # inspired by Mikuphile
 # 
-# July.2023
+# July.2023		Publish Script
+# July.2025		Update: Make Script compatible for the latest Version of PH
 #
 
 #meta:name:Mirai Link (Simple)
-#meta:description:Connects the Flying Icon of the first Note with the last Note. All Icons in between disappear. The first Icon is left untouched.
-#meta:usage:Select your arranged notes and press "Run".
+#meta:description:Connects the Flying Icon of the first Note with the last Note. All Flying Icons in between will disappear. Does not change the Oscillation.
+#meta:usage:Select your arranged Notes and press "Run".
 #meta:preview:true
 
 
@@ -36,16 +37,16 @@ func run_script() -> int:
 	var last_note = selected_timing_points[selected_point_count - 1];
 
 	# First Note
-	#set_timing_point_property(first_note, "distance", distance(last_note.position, first_note.position));
-	#set_timing_point_property(first_note, "auto_time_out", false);
-	#set_timing_point_property(first_note, "time_out", last_note.time - first_note.time);
+	set_timing_point_property(first_note, "distance", distance(last_note.position, first_note.position));
+	set_timing_point_property(first_note, "auto_time_out", false);
+	set_timing_point_property(first_note, "time_out", last_note.time - first_note.time);
 	#set_timing_point_property(first_note, "oscillation_amplitude", 0);
 	#set_timing_point_property(first_note, "oscillation_frequency", -2);
-	#set_timing_point_property(first_note, "entry_angle", (Vector2(0,0).angle_to_point(connection_vector(first_note.position,last_note.position)) / TAU * 360));
+	set_timing_point_property(first_note, "entry_angle", (Vector2(0,0).angle_to_point(connection_vector(last_note.position, first_note.position)) / TAU * 360));
 
 	# Notes in between
 	for i in range(1, selected_point_count - 1):
-		set_timing_point_property(selected_timing_points[i],"distance", 9000000000000000000.00);
+		set_timing_point_property(selected_timing_points[i], "distance", 9000000000000000000.00);
 		#set_timing_point_property(selected_timing_points[i], "auto_time_out", false);
 		#set_timing_point_property(selected_timing_points[i], "time_out", last_note.time - first_note.time);
 		set_timing_point_property(selected_timing_points[i], "entry_angle", 270);
@@ -54,8 +55,8 @@ func run_script() -> int:
 	set_timing_point_property(last_note, "distance", distance(last_note.position, first_note.position));
 	set_timing_point_property(last_note, "auto_time_out", false);
 	set_timing_point_property(last_note, "time_out", last_note.time - first_note.time);
-	set_timing_point_property(last_note, "oscillation_amplitude", 0);
+	#set_timing_point_property(last_note, "oscillation_amplitude", 0);
 	#set_timing_point_property(last_note, "oscillation_frequency", 2);
-	set_timing_point_property(last_note, "entry_angle", (Vector2(0,0).angle_to_point(connection_vector(first_note.position,last_note.position)) / TAU * 360));
+	set_timing_point_property(last_note, "entry_angle", (Vector2(0,0).angle_to_point(connection_vector(last_note.position, first_note.position)) / TAU * 360));
 
 	return OK;
